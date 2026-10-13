@@ -1,0 +1,111 @@
+/* Reset: saca los márgenes y rellenos que el navegador pone por defecto */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f5f7;
+    color: #222;
+}
+
+.encabezado {
+    background-color: #1f2937;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Centra el contenido y limita el ancho */
+.contenedor {
+    max-width: 700px;
+    margin: 24px auto;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Cajas blancas que agrupan cada sección */
+.tarjeta {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta h2 {
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+}
+
+/* Formulario */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formulario label {
+    font-weight: bold;
+}
+
+.formulario input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* Botones */
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.btn-principal {
+    background-color: #2563eb;
+    color: #fff;
+    margin-top: 8px;
+}
+
+.btn-editar {
+    background-color: #f59e0b;
+    color: #fff;
+}
+
+.btn-eliminar {
+    background-color: #dc2626;
+    color: #fff;
+}
+
+/* Lista de productos */
+.lista-productos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+}
+
+.acciones {
+    display: flex;
+    gap: 8px;
+}
