@@ -17,6 +17,24 @@ body {
     padding: 20px;
     text-align: center;
 }
+/* Navegación */
+.navegacion {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+.navegacion a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+.navegacion a:hover {
+    background-color: #4b6da3;
+}
+
 
 /* Centra el contenido y limita el ancho */
 .contenedor {
