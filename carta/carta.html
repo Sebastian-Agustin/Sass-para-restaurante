@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta | Nombre del local</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="carta.css">
+</head>
+<body>
+
+    <header class="portada">
+        <div class="contenedor">
+            <h1 class="portada__nombre">KenChuki</h1>
+            <p class="portada__lema">Cocina de barrio, hecha al momento.</p>
+            <p class="portada__horario">Abierto de martes a domingo, de 12 a 23 h</p>
+        </div>
+    </header>
+
+    <!-- Filtro por categoría: el JS lee data-categoria de cada botón -->
+    <nav class="categorias" aria-label="Categorías de la carta">
+        <div class="contenedor">
+            <div class="categorias__lista" id="carta-categorias">
+                <button type="button" data-categoria="todo" aria-pressed="true">Todo</button>
+                <button type="button" data-categoria="entradas" aria-pressed="false">Entradas</button>
+                <button type="button" data-categoria="principales" aria-pressed="false">Principales</button>
+                <button type="button" data-categoria="postres" aria-pressed="false">Postres</button>
+                <button type="button" data-categoria="bebidas" aria-pressed="false">Bebidas</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="contenedor">
+
+        <!-- Acá el JS va a insertar los platos.
+             Los <li> de abajo son de ejemplo para ver el diseño: borralos cuando tu JS los genere. -->
+        <ul class="platos" id="carta-productos">
+
+            <li class="plato" data-categoria="entradas">
+                <div class="plato__foto" role="img" aria-label="Provoleta a la parrilla"></div>
+                <div class="plato__cuerpo">
+                    <div class="plato__linea">
+                        <h3 class="plato__nombre">Provoleta a la parrilla</h3>
+                        <span class="plato__puntos" aria-hidden="true"></span>
+                        <span class="plato__precio">$ 8.500</span>
+                    </div>
+                    <p class="plato__desc">Queso provolone fundido con orégano y un hilo de aceite de oliva.</p>
+                </div>
+            </li>
+
+            <li class="plato" data-categoria="entradas">
+                <div class="plato__foto" role="img" aria-label="Empanadas de carne"></div>
+                <div class="plato__cuerpo">
+                    <div class="plato__linea">
+                        <h3 class="plato__nombre">Empanadas de carne</h3>
+                        <span class="plato__puntos" aria-hidden="true"></span>
+                        <span class="plato__precio">$ 7.200</span>
+                    </div>
+                    <p class="plato__desc">Tres unidades al horno, cortadas a cuchillo.</p>
+                </div>
+            </li>
+
+            <li class="plato" data-categoria="principales">
+                <div class="plato__foto" role="img" aria-label="Milanesa napolitana"></div>
+                <div class="plato__cuerpo">
+                    <div class="plato__linea">
+                        <h3 class="plato__nombre">Milanesa napolitana</h3>
+                        <span class="plato__puntos" aria-hidden="true"></span>
+                        <span class="plato__precio">$ 15.800</span>
+                    </div>
+                    <p class="plato__desc">Con jamón, mozzarella y salsa de tomate. Viene con papas fritas.</p>
+                </div>
+            </li>
+
+            <li class="plato plato--agotado" data-categoria="principales">
+                <div class="plato__foto" role="img" aria-label="Ravioles de ricota"></div>
+                <div class="plato__cuerpo">
+                    <div class="plato__linea">
+                        <h3 class="plato__nombre">Ravioles de ricota</h3>
+                        <span class="plato__aviso">Agotado hoy</span>
+                        <span class="plato__puntos" aria-hidden="true"></span>
+                        <span class="plato__precio">$ 13.900</span>
+                    </div>
+                    <p class="plato__desc">Pasta casera con salsa fileto o crema, a elección.</p>
+                </div>
+            </li>
+
+            <li class="plato" data-categoria="postres">
+                <div class="plato__foto" role="img" aria-label="Flan casero"></div>
+                <div class="plato__cuerpo">
+                    <div class="plato__linea">
+                        <h3 class="plato__nombre">Flan casero</h3>
+                        <span class="plato__puntos" aria-hidden="true"></span>
+                        <span class="plato__precio">$ 6.400</span>
+                    </div>
+                    <p class="plato__desc">Con dulce de leche y crema.</p>
+                </div>
+            </li>
+
+            <li class="plato" data-categoria="bebidas">
+                <div class="plato__foto" role="img" aria-label="Limonada con menta"></div>
+                <div class="plato__cuerpo">
+                    <div class="plato__linea">
+                        <h3 class="plato__nombre">Limonada con menta</h3>
+                        <span class="plato__puntos" aria-hidden="true"></span>
+                        <span class="plato__precio">$ 4.800</span>
+                    </div>
+                    <p class="plato__desc">Exprimida en el momento, con jengibre si la querés picante.</p>
+                </div>
+            </li>
+
+        </ul>
+
+        <!-- Se muestra (quitando el atributo hidden) cuando no hay productos publicados -->
+        <p class="vacio" id="carta-vacio" hidden>Todavía no hay platos en la carta. Volvé pronto.</p>
+
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor pie__grilla">
+            <div>
+                <h2>Horarios</h2>
+                <p>Martes a domingo, de 12 a 23 h</p>
+            </div>
+            <div>
+                <h2>Dónde estamos</h2>
+                <p>Calle y número, barrio, ciudad</p>
+            </div>
+            <div>
+                <h2>Pedidos y reservas</h2>
+                <p>Teléfono o WhatsApp del local</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Molde de un plato: tu JS puede clonarlo con template.content.cloneNode(true) -->
+    <template id="tpl-plato">
+        <li class="plato">
+            <div class="plato__foto" role="img"></div>
+            <div class="plato__cuerpo">
+                <div class="plato__linea">
+                    <h3 class="plato__nombre"></h3>
+                    <span class="plato__aviso" hidden>Agotado hoy</span>
+                    <span class="plato__puntos" aria-hidden="true"></span>
+                    <span class="plato__precio"></span>
+                </div>
+                <p class="plato__desc"></p>
+            </div>
+        </li>
+    </template>
+
+    <!-- Acá vinculás tu JavaScript -->
+    <!-- <script src="../compartido/js/productos.js"></script> -->
+    <!-- <script src="js/carta.js"></script> -->
+</body>
+</html>

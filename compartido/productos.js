@@ -56,7 +56,3 @@ const eliminarProducto = (id) => {
     }
 };
 
-eliminarProducto(2); //elimino el producto con id 2
-crearProducto("Zapatillas", 400); //creo un nuevo producto con nombre Zapatillas y precio 400
-crearProducto("Gorros", 150); //creo un nuevo producto con nombre Gorros y precio 150
-console.log(productos); //muestro el array de productos por consola
